@@ -1,11 +1,11 @@
 require 'rubygems'
 require 'rake'
-# require 'jeweler'
+require 'jeweler'
 
 begin
-  require 'ad_agency'
+  #require 'ad_agency'
   Jeweler::Tasks.new do |gem|
-    gem.name = "ri_cal"
+    gem.name = "micahwedemeyer-ri_cal"
     gem.summary = %Q{a new implementation of RFC2445 in Ruby}
     gem.description = %Q{A new Ruby implementation of RFC2445 iCalendar.
 
@@ -27,7 +27,6 @@ A Google group for discussion of this library has been set up http://groups.goog
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
-  Jeweler::AdAgencyTasks.new
 # rescue LoadError => ex
 #   puts ex
 #   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
@@ -52,8 +51,6 @@ rescue LoadError
     abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
   end
 end
-
-Dir['tasks/**/*.rake'].each { |t| load t }
 
 task :default => [:"spec:with_tzinfo_gem", :"spec:with_active_support"]
 

@@ -4,12 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{ri_cal}
-  s.version = "0.8.8"
+  s.name = %q{micahwedemeyer-ri_cal}
+  s.version = "0.8.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Rick DeNatale"]
-  s.date = %q{2011-02-13}
+  s.date = %q{2011-07-02}
+  s.default_executable = %q{ri_cal}
   s.description = %q{A new Ruby implementation of RFC2445 iCalendar.
 
 The existing Ruby iCalendar libraries (e.g. icalendar, vpim) provide for parsing and generating icalendar files,
@@ -151,6 +152,7 @@ A Google group for discussion of this library has been set up http://groups.goog
     "performance/psm_big_enum/subject.rb",
     "performance/utah_cycling/subject.rb",
     "ri_cal.gemspec",
+    "sample_ical_files/from_ical_dot_app/test1.ics",
     "script/benchmark_subject",
     "script/console",
     "script/destroy",
@@ -191,53 +193,35 @@ A Google group for discussion of this library has been set up http://groups.goog
     "tasks/gem_loader/load_active_support.rb",
     "tasks/gem_loader/load_tzinfo_gem.rb",
     "tasks/ri_cal.rake",
-    "tasks/spec.rake"
+    "tasks/spec.rake",
+    "website/images/rubytrends.png",
+    "website/javascripts/rounded_corners_lite.inc.js",
+    "website/stylesheets/screen.css"
   ]
   s.homepage = %q{http://github.com/rubyredrick/ri_cal}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{a new implementation of RFC2445 in Ruby}
-  s.test_files = [
-    "spec/ri_cal/bugreports_spec.rb",
-    "spec/ri_cal/component/alarm_spec.rb",
-    "spec/ri_cal/component/calendar_spec.rb",
-    "spec/ri_cal/component/event_spec.rb",
-    "spec/ri_cal/component/freebusy_spec.rb",
-    "spec/ri_cal/component/journal_spec.rb",
-    "spec/ri_cal/component/t_z_info_timezone_spec.rb",
-    "spec/ri_cal/component/timezone_spec.rb",
-    "spec/ri_cal/component/todo_spec.rb",
-    "spec/ri_cal/component_spec.rb",
-    "spec/ri_cal/core_extensions/string/conversions_spec.rb",
-    "spec/ri_cal/core_extensions/time/calculations_spec.rb",
-    "spec/ri_cal/core_extensions/time/week_day_predicates_spec.rb",
-    "spec/ri_cal/fast_date_time_spec.rb",
-    "spec/ri_cal/inf_loop_spec.rb",
-    "spec/ri_cal/occurrence_enumerator_spec.rb",
-    "spec/ri_cal/parser_spec.rb",
-    "spec/ri_cal/property_value/date_spec.rb",
-    "spec/ri_cal/property_value/date_time_spec.rb",
-    "spec/ri_cal/property_value/duration_spec.rb",
-    "spec/ri_cal/property_value/occurrence_list_spec.rb",
-    "spec/ri_cal/property_value/period_spec.rb",
-    "spec/ri_cal/property_value/recurrence_rule/recurring_year_day_spec.rb",
-    "spec/ri_cal/property_value/recurrence_rule_spec.rb",
-    "spec/ri_cal/property_value/text_spec.rb",
-    "spec/ri_cal/property_value/utc_offset_spec.rb",
-    "spec/ri_cal/property_value_spec.rb",
-    "spec/ri_cal/required_timezones_spec.rb",
-    "spec/ri_cal_spec.rb",
-    "spec/spec_helper.rb"
-  ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<bundler>, ["= 1.0.15"])
+      s.add_runtime_dependency(%q<jeweler>, ["= 1.6.3"])
+      s.add_runtime_dependency(%q<gemcutter>, ["= 0.7.0"])
+      s.add_runtime_dependency(%q<ad_agency>, ["= 0.1.2"])
     else
+      s.add_dependency(%q<bundler>, ["= 1.0.15"])
+      s.add_dependency(%q<jeweler>, ["= 1.6.3"])
+      s.add_dependency(%q<gemcutter>, ["= 0.7.0"])
+      s.add_dependency(%q<ad_agency>, ["= 0.1.2"])
     end
   else
+    s.add_dependency(%q<bundler>, ["= 1.0.15"])
+    s.add_dependency(%q<jeweler>, ["= 1.6.3"])
+    s.add_dependency(%q<gemcutter>, ["= 0.7.0"])
+    s.add_dependency(%q<ad_agency>, ["= 0.1.2"])
   end
 end
 
