@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{micahwedemeyer-ri_cal}
-  s.version = "0.8.9"
+  s.version = "0.8.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Rick DeNatale"]
@@ -28,6 +28,9 @@ A Google group for discussion of this library has been set up http://groups.goog
     "copyrights.txt"
   ]
   s.files = [
+    ".rvmrc",
+    "Gemfile",
+    "Gemfile.lock",
     "History.txt",
     "Manifest.txt",
     "README.txt",
@@ -144,6 +147,7 @@ A Google group for discussion of this library has been set up http://groups.goog
     "lib/ri_cal/property_value/utc_offset.rb",
     "lib/ri_cal/property_value/zulu_date_time.rb",
     "lib/ri_cal/required_timezones.rb",
+    "micahwedemeyer-ri_cal.gemspec",
     "parked_specs/ri_cal/claudio_a_bug_spec.rb",
     "performance/empty_propval/subject.rb",
     "performance/paris_eastern/subject.rb",
@@ -151,7 +155,6 @@ A Google group for discussion of this library has been set up http://groups.goog
     "performance/psm_big_enum/ical.ics",
     "performance/psm_big_enum/subject.rb",
     "performance/utah_cycling/subject.rb",
-    "ri_cal.gemspec",
     "sample_ical_files/from_ical_dot_app/test1.ics",
     "script/benchmark_subject",
     "script/console",
@@ -207,21 +210,15 @@ A Google group for discussion of this library has been set up http://groups.goog
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<bundler>, ["= 1.0.15"])
-      s.add_runtime_dependency(%q<jeweler>, ["= 1.6.3"])
-      s.add_runtime_dependency(%q<gemcutter>, ["= 0.7.0"])
-      s.add_runtime_dependency(%q<ad_agency>, ["= 0.1.2"])
+      s.add_development_dependency(%q<jeweler>, ["= 1.6.3"])
+      s.add_development_dependency(%q<gemcutter>, ["= 0.7.0"])
     else
-      s.add_dependency(%q<bundler>, ["= 1.0.15"])
       s.add_dependency(%q<jeweler>, ["= 1.6.3"])
       s.add_dependency(%q<gemcutter>, ["= 0.7.0"])
-      s.add_dependency(%q<ad_agency>, ["= 0.1.2"])
     end
   else
-    s.add_dependency(%q<bundler>, ["= 1.0.15"])
     s.add_dependency(%q<jeweler>, ["= 1.6.3"])
     s.add_dependency(%q<gemcutter>, ["= 0.7.0"])
-    s.add_dependency(%q<ad_agency>, ["= 0.1.2"])
   end
 end
 
