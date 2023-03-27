@@ -140,11 +140,11 @@ class RiCal::Component::TZInfoTimezone < RiCal::Component::Timezone
     periods = Periods.new
     period = initial_period = tzinfo_timezone.period_for_utc(utc_start)
      #start with the period before the one containing utc_start
-    prev_period = period.starts_at && tzinfo_timezone.period_for_utc(period.starts_at.to_date - 1)
+    prev_period = period.starts_at && tzinfo_timezone.period_for_utc(period.starts_at.to_datetime - 1)
     period = prev_period if prev_period
     while period && period.starts_at && period.starts_at < utc_end
       periods.add_period(period)
-      period = period.ends_at && tzinfo_timezone.period_for_utc(period.ends_at.to_date + 1)
+      period = period.ends_at && tzinfo_timezone.period_for_utc(period.ends_at.to_datetime + 1)
     end
     periods.add_period(initial_period, :force) if periods.empty?
     periods.export_to(export_stream)
